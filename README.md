@@ -106,7 +106,7 @@ These metrics were used to evaluate seasonality, purchasing intensity, and reven
 - The top 10 products contribute **7.6% of revenue**, indicating moderate product concentration within a broad merchandise catalog.
 
 ### Customer Behavior
-- Customer behavior was examined through three complementary dimensions: revenue concentration, repeat purchase frequency, and monthly customer activity.
+Customer behavior was examined through three complementary dimensions: revenue concentration, repeat purchase frequency, and monthly customer activity.
 
   #### Customer Concentration
   - Customer concentration analysis focuses on **identifiable buyers**, excluding transactions without customer IDs to avoid distorting customer-level metrics.
