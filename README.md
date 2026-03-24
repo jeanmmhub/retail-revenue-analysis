@@ -77,6 +77,7 @@ Customer activity was examined through three complementary metrics:
 
 Transactions without customer identifiers were excluded from customer-level behavioral metrics to prevent distortion of concentration measurements.
 
+---
 #### Key Metrics
 - **Revenue**
   - SUM(quantity × price)
