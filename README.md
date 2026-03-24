@@ -108,20 +108,21 @@ These metrics were used to evaluate seasonality, purchasing intensity, and reven
 ### Customer Behavior
 - Customer behavior was examined through three complementary dimensions: revenue concentration, repeat purchase frequency, and monthly customer activity.
 
-#### Customer Concentration
-- Customer concentration analysis focuses on **identifiable buyers**, excluding transactions without customer IDs to avoid distorting customer-level metrics.
-- Anonymous transactions account for **13.6% of total revenue**, indicating a meaningful portion of demand occurs without recorded customer identity.
-- Among identifiable customers, the **top 10 buyers generate approximately 13.42% of revenue**, while the top **20% of customers account for roughly 66.9% of revenue**, indicating **moderate customer concentration rather than strict Pareto behavior**.
+  #### Customer Concentration
+  - Customer concentration analysis focuses on **identifiable buyers**, excluding transactions without customer IDs to avoid distorting customer-level metrics.
+  - Anonymous transactions account for **13.6% of total revenue**, indicating a meaningful portion of demand occurs without recorded customer identity.
+  - Among identifiable customers, the **top 10 buyers generate approximately 13.42% of revenue**, while the top **20% of customers account for roughly 66.9% of   revenue**, indicating **moderate customer concentration rather than strict Pareto behavior**.
 
-#### Repeat Purchase Behavior
-- Repeat purchasing is a major driver of transaction activity. Customers with **10 or more purchases generate approximately 63% of total orders**, indicating strong reliance on returning buyers.
-- One-time buyers represent a noticeable portion of customers but contribute only **3.26% of total order volume**, suggesting that most transactions come from repeat customers rather than occasional buyers.
-#### Customer Activity
-- Over the 25-month dataset, the business maintains an average of **\~1,080 monthly active customers (MAC)**, or **\~1,096 when excluding the partial final month,** indicating a stable baseline level of recurring demand.
-- Monthly active customers fluctuate within a range of approximately **+631 / –393 customers from the average** across the observation period, reflecting seasonal expansion and contraction of the customer base while maintaining a consistent underlying demand level.
-- Customers place an average of **1.65 orders per month**, with relatively small fluctuations (+0.22 / –0.31), suggesting that purchasing intensity remains consistent throughout most of the year.
-- Average **revenue per customer is approximately 595.85 per month**, with moderate variation (+117.94 / –122.86).
-- The seasonal revenue surge is primarily driven by **an increase in the number of active customers rather than increased purchasing frequency**, indicating seasonal expansion of the customer base during the **September–November peak retail period**.
+  #### Repeat Purchase Behavior
+  - Repeat purchasing is a major driver of transaction activity. Customers with **10 or more purchases generate approximately 63% of total orders**, indicating        strong reliance on returning buyers.
+  - One-time buyers represent a noticeable portion of customers but contribute only **3.26% of total order volume**, suggesting that most transactions come from     repeat customers rather than occasional buyers.
+
+  #### Customer Activity
+  - Over the 25-month dataset, the business maintains an average of **\~1,080 monthly active customers (MAC)**, or **\~1,096 when excluding the partial final          month,** indicating a stable baseline level of recurring demand.
+  - Monthly active customers fluctuate within a range of approximately **+631 / –393 customers from the average** across the observation period, reflecting            seasonal expansion and contraction of the customer base while maintaining a consistent underlying demand level.
+  - Customers place an average of **1.65 orders per month**, with relatively small fluctuations (+0.22 / –0.31), suggesting that purchasing intensity remains          consistent throughout most of the year.
+  - Average **revenue per customer is approximately 595.85 per month**, with moderate variation (+117.94 / –122.86).
+  - The seasonal revenue surge is primarily driven by **an increase in the number of active customers rather than increased purchasing frequency**, indicating         seasonal expansion of the customer base during the **September–November peak retail period**.
 
 ## Business Implications
 - Merchandise sales constitute the core revenue engine of the business, with operational categories primarily reflecting financial adjustments rather than independent revenue streams. This indicates that overall performance is largely determined by product sales rather than operational services.
