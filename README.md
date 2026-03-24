@@ -118,7 +118,7 @@ These metrics were used to evaluate seasonality, purchasing intensity, and reven
 - Revenue distribution across products follows a **Pareto-like pattern**, where **20% of the 5,070 SKUs generate approximately 79.5% of total revenue**.
 - The top 10 products contribute **7.6% of revenue**, indicating moderate product concentration within a broad merchandise catalog.
 
-### Customer Behavior
+### Customer Behavior Remains Stable Across Seasonal Periods
 Customer behavior was examined through three complementary dimensions: revenue concentration, repeat purchase frequency, and monthly customer activity.
 
   #### Customer Concentration
