@@ -357,7 +357,7 @@ Together, these patterns indicate a business with predictable seasonal demand an
 
 
 
-!\[Dashboard](visuals/dashboard.jpg)
+![Dashboard](visuals/dashboard.jpg)
 
 
 
@@ -382,7 +382,7 @@ This confirms that revenue growth is primarily driven by **customer expansion ra
 
 
 
-!\[Indexed Analysis](visuals/mac\_analysis.jpg)
+![Indexed Analysis](visuals/mac_analysis.jpg)
 
 
 
@@ -408,7 +408,7 @@ These findings indicate that the business relies on a combination of:
 
 
 
-!\[Segmentation and EC](visuals/segmentation\_and\_ec.jpg)
+![Segmentation and EC](visuals/segmentation_and_ec.jpg)
 
 
 
