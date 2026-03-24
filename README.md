@@ -1,4 +1,17 @@
 # Retail Revenue Analysis
+## Introduction
+This project analyzes retail transaction dataset to identify key revenue drivers, customer behavior patterns, and product concentration using SQL and Power BI
+## Key Insights (Quick View)
+- Revenue peaks during Sept - Nov (+73% vs baseline)
+- Growth driven by customer expansion, not spending increase
+- Top 20% of products generate **~79.5% of revenue**
+- Repeat customers (10+ orders) drive majority of order volume
+
+## Tools Used
+- SQL (PostgreSQL)
+- Power BI
+- Microsoft Excel (Data Staging)
+
 ## Executive Summary
 
 This analysis examines a retail transaction dataset to understand revenue structure, product performance, and customer behavior over a 25-month period. Results show that nearly all net revenue is generated through core merchandise sales, while non-merchandise transactions such as platform fees, bad debt, and manual adjustments primarily function as financial offsets rather than independent revenue sources.
@@ -133,7 +146,7 @@ Customer behavior was examined through three complementary dimensions: revenue c
 - Customer activity levels remain relatively stable outside seasonal peaks, with consistent order frequency and revenue per customer throughout the year. The Q4 revenue surge is therefore primarily explained by increased participation from additional customers rather than changes in purchasing behavior.
 - A meaningful portion of transactions lacks identifiable customer IDs, representing a limitation for customer-level behavioral analysis and suggesting that part of the customer base cannot be directly tracked over time.
 
-## Visual Analysis
+## Insights & Visualization
 The following visualizations support and validate the key findings outlined above, illustrating how revenue, customer activity, and product performance interact across time.
 ### **Revenue Performance Overview**
 This dashboard summarizes overall revenue trends, customer activity, and revenue concentration.
@@ -154,6 +167,8 @@ The visualization shows a clear divergence between customer growth and purchasin
 - Orders per customer and revenue per customer remain relatively stable
 
 This confirms that revenue growth is primarily driven by **customer expansion rather than increased purchasing intensity**, indicating that seasonal demand is fueled by higher participation rather than changes in individual behavior.
+
+**Key Insight: Revenue growth is driven by customer expansion**
 
 ![Indexed Analysis](visuals/mac_analysis.jpg)
 
