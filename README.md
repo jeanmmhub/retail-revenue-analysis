@@ -40,8 +40,7 @@ The dataset contains approximately **1067371 transaction rows**
 representing retail purchases between **2009–2011.**
 
 **SOURCE: https://www.kaggle.com/datasets/mashlyn/online-retail-ii-uci**
-
----
+## &nbsp;
 ### Data Cleaning & Preparation
 
 Initial preprocessing focused on ensuring transaction consistency and removing potential duplication.
@@ -52,8 +51,7 @@ Initial preprocessing focused on ensuring transaction consistency and removing p
 - Separating identifiable customers from transactions without customer IDs for behavioral analysis
 
 These steps produced a cleaned transaction table **fact\_event\_line\_clean** used for all subsequent analysis.
-
----
+## &nbsp;
 ### Data Modeling
 
 A simple analytical data model was constructed to support revenue decomposition.
@@ -69,7 +67,7 @@ A simple analytical data model was constructed to support revenue decomposition.
 
 This structure allowed transaction-level revenue to be aggregated across different analytical dimensions.
 
----
+## &nbsp;
 ### Analytical Framework
 The analysis was conducted across three primary analytical perspectives:
 
@@ -90,7 +88,7 @@ Customer activity was examined through three complementary metrics:
 
 Transactions without customer identifiers were excluded from customer-level behavioral metrics to prevent distortion of concentration measurements.
 
----
+## &nbsp;
 #### Key Metrics
 - **Revenue**
   - SUM(quantity × price)
@@ -107,35 +105,57 @@ These metrics were used to evaluate seasonality, purchasing intensity, and reven
 
 ## Key Findings
 ### Revenue Structure
-- Core merchandise generates nearly all net revenue, while non-merchandise categories primarily represent operational adjustments.
-- Platform fees, bad debt, and manual corrections collectively reduce net revenue but remain proportionally small relative to merchandise sales.
+- Core merchandise generates nearly all net revenue.
+- Non-merchandise categories (platform fees, bad debt, manual adjustments) primarily function as financial offsets and contribute minimally to total revenue.
 
 ### Seasonality
-- Revenue exhibits strong **seasonal concentration**, with the **September–November peak retail period** generating approximately **73% higher revenue** than other months.
-- Revenue across the rest of the year remains relatively stable, fluctuating within a narrow **−3% to +8% quarterly range**.
+- Revenue increases by approximately 73% during the **September–November period** compared to other months.
+- Revenue outside peak periods remains relatively stable, fluctuating within a range of approximately **−3% to +8%.**
 
 ### Product Concentration
-- Revenue distribution across products follows a **Pareto-like pattern**, where **20% of the 5,070 SKUs generate approximately 79.5% of total revenue**.
-- The top 10 products contribute **7.6% of revenue**, indicating moderate product concentration within a broad merchandise catalog.
+- Approximately **20% of the 5,070 SKUs generate ~79.5%** of total revenue.
+- The top 10 products contribute **~7.6% of total revenue.**
 
 ### Customer Behavior Remains Stable Across Seasonal Periods
-Customer behavior was examined through three complementary dimensions: revenue concentration, repeat purchase frequency, and monthly customer activity.
+#### Customer Concentration
+- Transactions without customer identifiers account for **~13.6% of total revenue.**
+- Among identifiable customers:
+  - Top 10 customers contribute **~13.42% of revenue**
+  - Top 20% of customers contribute **~66.9% of revenue**
+#### Repeat Purchase Behavior
+- Customers with **10 or more purchases account for ~63% of total orders.**
+- One-time buyers contribute approximately **3.26% of total order volume.**
+#### Customer Activity
+- Monthly active customers (MAC) average approximately **1,080**, with fluctuations of **+631 / −393** across the observed period.
+- Orders per customer average **~1.65**, with variation of **+0.22 / −0.31.**
+- Revenue per customer averages **~595.85**, with variation of **+117.94 / −122.86.**
+## &nbsp;
 
-  #### Customer Concentration
-  - Customer concentration analysis focuses on **identifiable buyers**, excluding transactions without customer IDs to avoid distorting customer-level metrics.
-  - Anonymous transactions account for **13.6% of total revenue**, indicating a meaningful portion of demand occurs without recorded customer identity.
-  - Among identifiable customers, the **top 10 buyers generate approximately 13.42% of revenue**, while the top **20% of customers account for roughly 66.9% of   revenue**, indicating **moderate customer concentration rather than strict Pareto behavior**.
+## Analytical Insights
+### Revenue Growth is Driven by Customer Expansion, Not Behavioral Change
+Revenue growth is primarily explained by changes in the number of active customers rather than changes in purchasing behavior.
 
-  #### Repeat Purchase Behavior
-  - Repeat purchasing is a major driver of transaction activity. Customers with **10 or more purchases generate approximately 63% of total orders**, indicating        strong reliance on returning buyers.
-  - One-time buyers represent a noticeable portion of customers but contribute only **3.26% of total order volume**, suggesting that most transactions come from     repeat customers rather than occasional buyers.
+While revenue increases significantly during peak periods, individual-level metrics—such as order frequency and revenue per customer—remain relatively stable over time. This indicates that seasonal performance is driven by increased customer participation rather than higher spending from existing customers.
 
-  #### Customer Activity
-  - Over the 25-month dataset, the business maintains an average of **\~1,080 monthly active customers (MAC)**, or **\~1,096 when excluding the partial final          month,** indicating a stable baseline level of recurring demand.
-  - Monthly active customers fluctuate within a range of approximately **+631 / –393 customers from the average** across the observation period, reflecting            seasonal expansion and contraction of the customer base while maintaining a consistent underlying demand level.
-  - Customers place an average of **1.65 orders per month**, with relatively small fluctuations (+0.22 / –0.31), suggesting that purchasing intensity remains          consistent throughout most of the year.
-  - Average **revenue per customer is approximately 595.85 per month**, with moderate variation (+117.94 / –122.86).
-  - The seasonal revenue surge is primarily driven by **an increase in the number of active customers rather than increased purchasing frequency**, indicating         seasonal expansion of the customer base during the **September–November peak retail period**.
+### Revenue is Structurally Concentrated in High-Performing Products
+Revenue distribution across products is uneven, with a small subset of SKUs accounting for a disproportionate share of total revenue.
+
+This concentration indicates that overall business performance is closely tied to the performance of a limited group of high-impact products within a broader catalog.
+
+### Customer Revenue is Moderately Concentrated but Broadly Distributed
+Customer revenue distribution shows a balance between concentration and diversification.
+
+While higher-value customers contribute a significant portion of revenue, overall purchasing activity remains distributed across a wider customer base.
+
+### Transaction Volume is Sustained by Repeat Customers
+A large share of total order volume is generated by customers with frequent purchase histories.
+
+This indicates that recurring customers play a central role in maintaining transaction activity, while one-time buyers contribute relatively little to overall volume.
+
+### A Portion of Customer Activity Remains Unobservable
+A meaningful share of transactions cannot be linked to identifiable customers.
+
+This limits full visibility into customer behavior and introduces uncertainty in customer-level analysis.
 
 ## Business Implications
 - Merchandise sales constitute the core revenue engine of the business, with operational categories primarily reflecting financial adjustments rather than independent revenue streams. This indicates that overall performance is largely determined by product sales rather than operational services.
@@ -145,6 +165,12 @@ Customer behavior was examined through three complementary dimensions: revenue c
 - Repeat purchasing plays a substantial role in sustaining transaction volume, as customers with frequent purchase histories generate the majority of order activity. This indicates that returning customers are an important component of the business’s ongoing demand.
 - Customer activity levels remain relatively stable outside seasonal peaks, with consistent order frequency and revenue per customer throughout the year. The Q4 revenue surge is therefore primarily explained by increased participation from additional customers rather than changes in purchasing behavior.
 - A meaningful portion of transactions lacks identifiable customer IDs, representing a limitation for customer-level behavioral analysis and suggesting that part of the customer base cannot be directly tracked over time.
+
+## Analytical Insights
+### Revenue Growth is Driven by Customer Expansion, Not Behavioral Change
+Revenue growth is primarily explained by changes in the number of active customers rather than changes in purchasing behavior.
+
+While revenue increases significantly during peak periods, individual-level metrics—such as order frequency and revenue per customer—remain relatively stable over time. This indicates that seasonal performance is driven by increased customer participation rather than higher spending from existing customers.
 
 ## Insights & Visualization
 The following visualizations support and validate the key findings outlined above, illustrating how revenue, customer activity, and product performance interact across time.
