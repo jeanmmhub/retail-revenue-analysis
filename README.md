@@ -7,22 +7,26 @@ This project analyzes retail transaction dataset to identify key revenue drivers
 - Growth driven by customer expansion, not spending increase
 - Top 20% of products generate **~79.5% of revenue**
 - Repeat customers (10+ orders) drive majority of order volume
-
+## &nbsp;
 ## Tools Used
 - SQL (PostgreSQL)
 - Power BI
 - Microsoft Excel (Data Staging)
-
+## &nbsp;
 ## Executive Summary
 
-This analysis examines a retail transaction dataset to understand revenue structure, product performance, and customer behavior over a 25-month period. Results show that nearly all net revenue is generated through core merchandise sales, while non-merchandise transactions such as platform fees, bad debt, and manual adjustments primarily function as financial offsets rather than independent revenue sources.
+This analysis examines a 25-month retail transaction dataset to identify the key drivers of revenue performance, customer behavior, and product contribution.
 
-Revenue demonstrates strong seasonal concentration, with seasonal peak window (September–November) generating approximately **73% higher revenue** than other seasonal quarters, while off-season period maintain relatively stable performance. Further customer activity analysis indicates that this seasonal surge is primarily driven by **an increase in the number of active customers rather than higher purchasing intensity**, suggesting that peak demand periods expand the customer base rather than changing individual purchasing behavior.
+Revenue is generated almost entirely from core merchandise sales, with non-merchandise transactions functioning primarily as financial adjustments rather than independent revenue sources.
 
-Product performance follows a **Pareto-like distribution**, where roughly **20% of the 5,070 SKUs generate approximately 79.5% of total revenue**, indicating meaningful reliance on a subset of high-performing products. In contrast, customer revenue concentration remains more moderate: among identifiable buyers, the **top 20% customers contribute approximately 66.84% of total revenue**, shows  that revenue distribution is more diverse.
+Revenue exhibits a strong seasonal pattern, increasing by approximately **73% during the September–November peak period,** while remaining relatively stable throughout the rest of the year. This growth is driven primarily by an expansion in active customers, while purchasing behavior—measured through order frequency and revenue per customer—remains largely unchanged.
 
-Overall, the analysis shows a retail business characterized by **stable baseline demand, strong seasonal expansion of customer participation, and revenue concentration within a subset of high-performing products**, while purchasing activity remains broadly distributed across a diverse customer base.
+Product performance is highly concentrated, with approximately **20% of SKUs generating ~79.5% of total revenue**, indicating that overall performance depends on a relatively small subset of high-impact products.
 
+Customer activity is sustained primarily by repeat purchasing behavior, with high-frequency customers contributing the majority of total order volume, while one-time buyers contribute minimally to overall transactions.
+
+Overall, the business is characterized by **stable baseline demand, strong seasonal expansion driven by customer participation, and structural reliance on high-performing products**, with consistent purchasing behavior across the observed period.
+## &nbsp;
 ## Methodology
 ### Dataset
 The analysis uses the **Online Retail Transaction Dataset**, which contains
@@ -67,7 +71,6 @@ A simple analytical data model was constructed to support revenue decomposition.
   - economic categories (core merchandise, platform fees, bad debt, shipping income, etc.)
 
 This structure allowed transaction-level revenue to be aggregated across different analytical dimensions.
-
 ## &nbsp;
 ### Analytical Framework
 The analysis was conducted across three primary analytical perspectives:
@@ -88,7 +91,6 @@ Customer activity was examined through three complementary metrics:
 - **Monthly active customers (MAC)** – changes in active customer participation over time
 
 Transactions without customer identifiers were excluded from customer-level behavioral metrics to prevent distortion of concentration measurements.
-
 ## &nbsp;
 #### Key Metrics
 - **Revenue**
@@ -103,7 +105,7 @@ Transactions without customer identifiers were excluded from customer-level beha
   - Cumulative share of total merchandise revenue ordered by SKU revenue.
 
 These metrics were used to evaluate seasonality, purchasing intensity, and revenue concentration across the product catalog and customer base.
-
+## &nbsp;
 ## Key Findings
 ### Revenue Structure
 - Core merchandise generates nearly all net revenue.
@@ -131,33 +133,32 @@ These metrics were used to evaluate seasonality, purchasing intensity, and reven
 - Orders per customer average **~1.65**, with variation of **+0.22 / −0.31.**
 - Revenue per customer averages **~595.85**, with variation of **+117.94 / −122.86.**
 ## &nbsp;
-
 ## Analytical Insights
-### Revenue Growth is Driven by Customer Expansion, Not Behavioral Change
+### Revenue Growth is Driven by Customer Expansion
 Revenue growth is primarily explained by changes in the number of active customers rather than changes in purchasing behavior.
 
-While revenue increases significantly during peak periods, individual-level metrics—such as order frequency and revenue per customer—remain relatively stable over time. This indicates that seasonal performance is driven by increased customer participation rather than higher spending from existing customers.
+During peak periods, total revenue increases alongside customer count, while individual-level metrics—such as order frequency and revenue per customer—remain stable. This reflects a demand pattern where growth is driven by increased participation rather than higher spending per customer.
 
 ### Revenue is Structurally Concentrated in High-Performing Products
-Revenue distribution across products is uneven, with a small subset of SKUs accounting for a disproportionate share of total revenue.
+Revenue is unevenly distributed across the product catalog, with a subset of SKUs contributing a disproportionate share of total revenue.
 
-This concentration indicates that overall business performance is closely tied to the performance of a limited group of high-impact products within a broader catalog.
+This creates a structural dependence on high-performing products, where overall revenue performance is closely tied to the availability and performance of a limited number of items.
 
 ### Customer Revenue is Moderately Concentrated but Broadly Distributed
-Customer revenue distribution shows a balance between concentration and diversification.
+Customer revenue distribution reflects a balance between concentration and diversification.
 
-While higher-value customers contribute a significant portion of revenue, overall purchasing activity remains distributed across a wider customer base.
+While higher-value customers contribute a significant portion of revenue, purchasing activity remains distributed across a wider base of customers, preventing reliance on a small number of buyers.
 
 ### Transaction Volume is Sustained by Repeat Customers
-A large share of total order volume is generated by customers with frequent purchase histories.
+Order activity is primarily driven by customers with frequent purchase histories, while one-time buyers contribute minimally to overall transaction volume.
 
-This indicates that recurring customers play a central role in maintaining transaction activity, while one-time buyers contribute relatively little to overall volume.
+However, without cohort-level analysis, it is not possible to determine whether this reflects low retetion or natural distribution of purchasing frequency.
 
 ### A Portion of Customer Activity Remains Unobservable
-A meaningful share of transactions cannot be linked to identifiable customers.
+A share of transaction cannot be linked to identifiable customers, limiting visibility into customer-level behavior.
 
-This limits full visibility into customer behavior and introduces uncertainty in customer-level analysis.
-
+Thie introduces uncertainty in measuring customer concentration, repeat puchasing patterns, and long-term customer acitivity.
+## &nbsp;
 ## Business Implications
 - **Prioritize customer acquisition leading into peak periods.**
 
@@ -183,40 +184,17 @@ This limits full visibility into customer behavior and introduces uncertainty in
 
   A portion of transactions cannot be linked to identifiable customers, limiting visibility into behavior and reducing the precision of customer-level insights.
 ## Insights & Visualization
-The following visualizations support and validate the key findings outlined above, illustrating how revenue, customer activity, and product performance interact across time.
+The following visualization provide supporting evidence for the key findings and analytical insights, illustrating how revenue, customer activity, and product performance interact across time.
 ### **Revenue Performance Overview**
-This dashboard summarizes overall revenue trends, customer activity, and revenue concentration.
-Revenue exhibits a clear seasonal pattern, with pronounced peaks during the **September–November period**, while maintaining relatively stable performance during off-peak months.
-At the same time, Pareto analysis shows that:
-- A small proportion of products contributes the majority of revenue
-- Customer revenue is more broadly distributed compared to product concentration
-
-Together, these patterns indicate a business with predictable seasonal demand and structural dependence on high-performing products, supported by a relatively diverse customer base.
-
+Revenue follows a clear seasonal pattern, with peak periods concentrated between September and November, while remaining relatively stable during off-peak months
 ![Dashboard](visuals/dashboard.jpg)
 
 ### **Drivers of Seasonal Revenue Growth (Indexed Analysis)**
-To enable direct comparison across metrics with different scales, customer count, orders per customer, and revenue per customer were normalized using an index **(base = 100)**.
-
-The visualization shows a clear divergence between customer growth and purchasing behavior:
-- Active customers increase significantly during peak periods
-- Orders per customer and revenue per customer remain relatively stable
-
-This confirms that revenue growth is primarily driven by **customer expansion rather than increased purchasing intensity**, indicating that seasonal demand is fueled by higher participation rather than changes in individual behavior.
-
-**Key Insight: Revenue growth is driven by customer expansion**
-
+Customer growth increases significantly during peak periods, while purchasing behavior remains stable, confirming that revenue growth is driven by customer expansion.
 ![Indexed Analysis](visuals/mac_analysis.jpg)
 
 ### **Customer Segmentation and Revenue Stucture**
-Customer activity and revenue composition reveal two key structural characteristics:
-- **Order volume is heavily driven by high-frequency repeat customers**, with customers making 10+ purchases contributing the majority of transactions
-- **Revenue is overwhelmingly generated by core merchandise**, while other categories contribute minimally
-
-These findings indicate that the business relies on a combination of:
-- Strong **customer retention and repeat purchasing behavior**
-- A **product-centric revenue model**, where merchandise sales dominate overall performance
-
+Transaction volume is dominated by high-frequency repeat customers, while revenue is primarily generated from core merchandise categories.
 ![Segmentation and EC](visuals/segmentation_and_ec.jpg)
 
 ## Technical Notes
