@@ -1,6 +1,10 @@
 # Retail Revenue Analysis
-## Introduction
-This project analyzes retail transaction dataset to identify key revenue drivers, customer behavior patterns, and product concentration using SQL and Power BI.
+## Project Overview
+This project analyzes a retail transaction dataset to understand how revenue is generated and identify the key factors that drive business growth.
+
+It focuses on determining whether growth is driven by customer expansion or increased spending, how revenue is distributed across products and customers, and how demand changes over time.
+
+The objective is to provide a structured view of the business's revenue dynamics to support decisions related to customer growth, product strategy, and overall revenue expansion.
 ## &nbsp;
 ## Key Insights (Quick View)
 - Revenue peaks during Sept - Nov (+73% vs baseline)
