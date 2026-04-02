@@ -45,58 +45,50 @@ historical transaction records from a UK-based retail company.
 - CustomerID
 - Country
 
-The dataset contains approximately **1067371 transaction rows**
+The dataset contains approximately **1,067,371 transaction rows**
 representing retail purchases between **2009–2011.**
 
 **SOURCE: https://www.kaggle.com/datasets/mashlyn/online-retail-ii-uci**
 ## &nbsp;
-### Data Cleaning & Preparation
+### Data Preparation
+Data preprocessing focused on ensuring consistency and removing duplication. Key steps included:
+- Deduplicating records to construct a **canonical event table**
+- Standardizing product identifiers using `UPPER(TRIM(stockcode))`
+- Filtering invalid or missing values in key fields
+- Preserving transactions without customer IDs for inclusion in non-customer analyses
 
-Initial preprocessing focused on ensuring transaction consistency and removing potential duplication.
-**Key steps included:**
-- Deduplicating transactional records to construct a **clean canonical event table**
-- Standardizing product identifiers using **UPPER(TRIM(stockcode))**
-- Filtering invalid or missing values in key transactional fields
-- Separating identifiable customers from transactions without customer IDs for behavioral analysis
-
-These steps produced a cleaned transaction table **fact\_event\_line\_clean** used for all subsequent analysis.
+The resulting dataset, **fact_event_line_clean_mat**, serves as the foundation for all analysis.
 ## &nbsp;
 ### Data Modeling
+A simple analytical model was constructed to support revenue decomposition across multiple dimensions.
+- **fact_event_line_clean_mat**
+  Canonical transaction table containing invoice-level data, quantities, prices, timestamps, customer IDs, country, and normalized product codes.
+- **dim_product_mat**
+  Product dimension classifying stockcodes into:
+  - Structural categories (merchandise vs operational)
+  - Economic categories (core merchandise, platform fees, bad debt, shipping income, etc.)
 
-A simple analytical data model was constructed to support revenue decomposition.
-**The primary tables include:**
-
-- **fact\_event\_line\_clean\_mat**
-  - Canonical event table containing invoice-level transactions, quantities, prices, timestamps, customer identification, and normalized product codes.
- 
-- **dim\_product\_mat**
-  - Product dimension used to classify stock codes into:
-  - structural categories (merchandise vs operational codes)
-  - economic categories (core merchandise, platform fees, bad debt, shipping income, etc.)
-
-This structure allowed transaction-level revenue to be aggregated across different analytical dimensions.
+This structure enables revenue aggregation across product, customer, and operational dimensions.
 ## &nbsp;
 ### Analytical Framework
-The analysis was conducted across three primary analytical perspectives:
+The analysis is structured across four key perspectives:
+- **Seasonality**
+  Monthly trends are used to analyze demand patterns over time, rather than relying on standard calender quarters. This enables data-driven identification of seasonal patterns, including a peak demand period between September and November.
+- **Revenue Structure**
+  Revenue is decomposed by economic category to distinguish core merchandise from operational adjustments.
+-  **Product Performance**
+  Pareto analysis is used to evaluate revenue concentration across SKUs.
+- **Customer Behavior**
+  - **Geographic Distribution**
+    Country-level analysis was conducted to assess revenue distribution. As the dataset is heavily concentrated in the UK, further country-level behavioral segmentation was not pursued, as it would not materially impact overall analysis.
+  Customer activity is evaluated through:
+  - Revenue concentration
+  - Repeat purchase frequency
+  - Monthly active customers (MAC)
 
-#### Seasonality
-Seasonality was analyzed using monthly trends rather than fiscal quarters, as the dataset revealed a peak demand window between September and November that does not align perfectly with standard calendar quarter definitions.
-
-#### Revenue Structure
-Revenue was decomposed by **economic category** to understand the contribution of merchandise sales versus operational adjustments such as platform fees, bad debt, and manual corrections.
-
-#### Product Performance
-Product-level revenue distribution was evaluated using **Pareto analysis** to measure concentration across the merchandise catalog.
-
-#### Customer Behavior
-Customer activity was examined through three complementary metrics:
-- **Customer concentration** – revenue distribution across identifiable customers
-- **Repeat purchase behavior** – order frequency per customer
-- **Monthly active customers (MAC)** – changes in active customer participation over time
-
-Transactions without customer identifiers were excluded from customer-level behavioral metrics to prevent distortion of concentration measurements.
+  Transaction without customer IDs are **excluded only from customer-level behavioral analysis** to avoid distortion of customer concentration and activity metrics, but are retained in all other analyses such as revenue and product performance.
 ## &nbsp;
-#### Key Metrics
+### Key Metrics
 - **Revenue**
   - SUM(quantity × price)
 - **Monthly Active Customers (MAC)**
@@ -107,8 +99,6 @@ Transactions without customer identifiers were excluded from customer-level beha
   - SUM(quantity × price) / COUNT(DISTINCT customerid)
 - **Product Pareto Contribution**
   - Cumulative share of total merchandise revenue ordered by SKU revenue.
-
-These metrics were used to evaluate seasonality, purchasing intensity, and revenue concentration across the product catalog and customer base.
 ## &nbsp;
 ## Key Findings
 ### Revenue Structure
@@ -187,6 +177,7 @@ Thie introduces uncertainty in measuring customer concentration, repeat puchasin
 - **Improve customer identification to enhance analytical accuracy.**
 
   A portion of transactions cannot be linked to identifiable customers, limiting visibility into behavior and reducing the precision of customer-level insights.
+## &nbsp;
 ## Insights & Visualization
 The following visualization provide supporting evidence for the key findings and analytical insights, illustrating how revenue, customer activity, and product performance interact across time.
 ### **Revenue Performance Overview**
@@ -200,7 +191,7 @@ Customer growth increases significantly during peak periods, while purchasing be
 ### **Customer Segmentation and Revenue Stucture**
 Transaction volume is dominated by high-frequency repeat customers, while revenue is primarily generated from core merchandise categories.
 ![Segmentation and EC](visuals/segmentation_and_ec.jpg)
-
+## &nbsp;
 ## Technical Notes
 ### Stock Code Normalization
 Product stock codes were normalized using: *UPPER(TRIM(stockcode))*
