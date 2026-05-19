@@ -1,4 +1,16 @@
-# Retail Revenue Analysis
+# Executive Summary
+
+This project analyzes retail transaction data to identify the structural drivers of revenue growth, customer behavior, and product concentration.
+
+### Key Findings
+- Revenue exhibits strong seasonal concentration during Sept–Nov.
+- Operational transaction categories contribute minimally relative to core merchandise sales.
+- **~79.5% of revenue** is generated from the **top 20% of high performing products**
+- Revenue growth is primarily driven by customer expansion rather than increased spending per customer.
+- Customer purchasing behavior remains relatively stable during off-seasonal spikes.
+
+# Retail Revenue Full Analytical Documentation
+
 ## Project Overview
 This project analyzes a retail transaction dataset to understand how revenue is generated and identify the key factors that drive business growth.
 
@@ -6,12 +18,7 @@ It focuses on determining whether growth is driven by customer expansion or incr
 
 The objective is to provide a structured view of the business's revenue dynamics to support decisions related to customer growth, product strategy, and overall revenue expansion.
 ## &nbsp;
-## Key Insights (Quick View)
-- Revenue peaks during Sept - Nov (+73% vs baseline)
-- Growth driven by customer expansion, not spending increase
-- Top 20% of products generate **~79.5% of revenue**
-- Repeat customers (10+ orders) drive majority of order volume
-## &nbsp;
+
 ## Tools Used
 - SQL (PostgreSQL)
 - Power BI
