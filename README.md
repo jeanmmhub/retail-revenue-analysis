@@ -8,6 +8,7 @@ This project analyzes retail transaction data to identify the structural drivers
 - **~79.5% of revenue** is generated from the **top 20% of high performing products**
 - Revenue growth is primarily driven by customer expansion rather than increased spending per customer.
 - Customer purchasing behavior remains relatively stable during off-seasonal spikes.
+- Long-retained customers exhibit disproportionately higher purchasing frequency and revenue contribution relative to short-duration customers.
 
 # Retail Revenue Full Analytical Documentation
 
